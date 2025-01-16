@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Long Until REYT?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .result {
+            font-size: 40px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>How Long Until REYT?</h1>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateIntervalsUntilReyt() {
+            const currentDate = new Date();
+            const targetDate = new Date(currentDate);
+            targetDate.setHours(16, 30, 0, 0);  // Set target time to 4:30 PM of the current day
+            
+            const timeDifference = targetDate - currentDate;
+            
+            if (timeDifference <= 0) {
+                document.getElementById('result').textContent = "It's already past 4:30 PM!";
+                return;
+            }
+
+            const minutesLeft = Math.floor(timeDifference / 60000);  // Convert to minutes
+            const intervalsLeft = Math.floor(minutesLeft / 15);  // Calculate 15-minute intervals
+
+            document.getElementById('result').textContent = `${intervalsLeft} more 15-minute intervals left.`;
+        }
+
+        // Call the function when the page loads
+        calculateIntervalsUntilReyt();
+    </script>
+
+</body>
+</html>
