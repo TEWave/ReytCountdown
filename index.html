@@ -68,7 +68,7 @@
             const minutesLeft = Math.floor(timeDifference / 60000);  // Convert to minutes
             const intervalsLeft = Math.floor(minutesLeft / 15);  // Calculate 15-minute intervals
 
-            document.getElementById('result').textContent = `${intervalsLeft} more 15 minutes left.`;
+            document.getElementById('result').textContent = `${intervalsLeft} more 15 minutes left`; // No full stop
             document.getElementById('emoji').textContent = "🍻"; // Two beer glasses emoji
         }
 
