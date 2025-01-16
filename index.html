@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #a8fcff; /* Updated background color */
             margin: 0;
             padding: 0;
             display: flex;
@@ -15,19 +15,23 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
-            color: #333;
+            color: #ffffff; /* Updated text color */
         }
         .container {
             text-align: center;
         }
         h1 {
             font-size: 24px;
-            color: #333;
+            color: #ffffff; /* Updated text color */
         }
         .result {
             font-size: 40px;
             font-weight: bold;
-            color: #e74c3c;
+            color: #ffffff; /* Updated text color */
+        }
+        .emoji {
+            font-size: 50px; /* Larger size for the emoji */
+            margin-top: 10px; /* Space between the result and the emoji */
         }
     </style>
 </head>
@@ -36,6 +40,7 @@
     <div class="container">
         <h1>How Long Until REYT?</h1>
         <div class="result" id="result"></div>
+        <div class="emoji" id="emoji"></div> <!-- Added a div for the emoji -->
     </div>
 
     <script>
@@ -48,13 +53,15 @@
             
             if (timeDifference <= 0) {
                 document.getElementById('result').textContent = "It's already past 4:30 PM!";
+                document.getElementById('emoji').textContent = "🍻"; // Two beer glasses emoji
                 return;
             }
 
             const minutesLeft = Math.floor(timeDifference / 60000);  // Convert to minutes
             const intervalsLeft = Math.floor(minutesLeft / 15);  // Calculate 15-minute intervals
 
-            document.getElementById('result').textContent = `${intervalsLeft} more 15-minute intervals left.`;
+            document.getElementById('result').textContent = `${intervalsLeft} more 15 minutes left.`;
+            document.getElementById('emoji').textContent = "🍻"; // Two beer glasses emoji
         }
 
         // Call the function when the page loads
