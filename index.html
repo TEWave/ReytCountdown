@@ -72,29 +72,10 @@
             document.getElementById('emoji').textContent = "🍻"; // Two beer glasses emoji
         }
 
-        // Function to calculate time until next 15-minute interval
-        function updateAtNextInterval() {
-            const currentDate = new Date();
-            const currentMinute = currentDate.getMinutes();
-            let timeToWait;
-
-            // Calculate how long until the next 15-minute interval
-            if (currentMinute % 15 === 0) {
-                timeToWait = 60000;  // Just wait 1 minute for the exact interval
-            } else {
-                timeToWait = (15 - (currentMinute % 15)) * 60000;  // Calculate the minutes until next 15-min mark
-            }
-
-            // Set an interval to update the page at the next 15-minute interval
-            setTimeout(() => {
-                calculateIntervalsUntilReyt();
-                setInterval(calculateIntervalsUntilReyt, 900000);  // Re-run the calculation every 15 minutes after the first update
-            }, timeToWait);
-        }
-
-        // Call the function when the page loads to update at the next 15-minute mark
-        updateAtNextInterval();
+        // Call the function when the page loads
+        calculateIntervalsUntilReyt();
     </script>
 
 </body>
 </html>
+
